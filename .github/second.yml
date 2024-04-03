@@ -1,0 +1,18 @@
+name: Second
+
+on: push
+
+jobs:
+  job: 
+    name: Job1
+    runs-on: ubuntu-latest
+    run: print-date
+  job: 
+    name: Job2
+    runs-on: windows-latest
+    run: Get-Date
+  job: 
+    name: Job1
+    runs-on: ubuntu-latest
+    needs: [Job1,Job2]
+    run: print-date
