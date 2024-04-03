@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: step-one
-      run: print-date
+      run: date
   job2: 
     name: Job2
     runs-on: windows-latest
@@ -16,9 +16,9 @@ jobs:
       - name: step-one
         run: Get-Date
   job3: 
-    name: Job1
+    name: Job3
     runs-on: ubuntu-latest
     needs: [job1,job2]
     steps:
       - name: step-one
-        run: print-date
+        run: date
